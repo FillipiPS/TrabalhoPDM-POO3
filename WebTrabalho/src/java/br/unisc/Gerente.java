@@ -30,7 +30,11 @@ public class Gerente extends HttpServlet {
             request.setAttribute("lista", new Dao().getInfos());
             request.getRequestDispatcher("listar.jsp").forward(request, response);
         }
-
+        if (op.toLowerCase().equals("mostrar")) {
+            System.out.println("mostrar!!!");
+            request.setAttribute("lista", new Dao().getInfos());
+            request.getRequestDispatcher("listaGoogle.jsp").forward(request, response);
+        }
     }
 
     @Override
