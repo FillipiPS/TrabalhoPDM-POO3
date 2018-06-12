@@ -16,15 +16,17 @@ public class Info {
     private String latitude;
     private String longitude;
     private Blob photo; 
+    private String descricao;
 
     public Info() {
     }
 
-    public Info(String id, String latitude, String longitude, Blob photo) {
+    public Info(String id, String latitude, String longitude, Blob photo, String descricao) {
         this.id = id;
         this.latitude = latitude;
         this.longitude = longitude;
         this.photo = photo;
+        this.descricao = descricao;
     }
 
     public String getId() {
@@ -58,7 +60,13 @@ public class Info {
     public void setPhoto(Blob photo) {
         this.photo = photo;
     }
-    
-    
-    
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
 }

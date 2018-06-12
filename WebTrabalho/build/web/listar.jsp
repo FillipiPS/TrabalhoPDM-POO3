@@ -22,6 +22,7 @@
                 <th>Latitude</th>
                 <th>Longitude</th>
                 <th>Foto</th>
+                <th>Descrição</th>
             </tr>
             <%
                 List<Info> infos = (List<Info>) request.getAttribute("lista");
@@ -35,6 +36,7 @@
                 <td><%out.print(i.getLatitude());%></td>
                 <td><%out.print(i.getLongitude());%></td>
                 <td><img src="data:image/jpeg;base64,<%out.print(encode);%>"></td>
+                <td><%out.print(i.getDescricao());%></td>
             </tr>
             <%
                 }

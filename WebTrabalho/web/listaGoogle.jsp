@@ -41,6 +41,7 @@
                 String[] latitude = new String[infos.size()];
                 String[] longitude = new String[infos.size()];
                 String[] encodes = new String[infos.size()];
+                String[] descricoes = new String[infos.size()];
                 int k = 0;
                 for (Info i : infos) {
                     Blob image = i.getPhoto();
@@ -48,6 +49,7 @@
                     encodes[k] = Base64.encodeBase64String(imgData);
                     latitude[k] = i.getLatitude();
                     longitude[k] = i.getLongitude();
+                    descricoes[k] = i.getDescricao();
                     k++;
                 }
                 System.out.println("Latitude: " + latitude[0] + "\nLongitude: " + longitude[0]);
@@ -61,6 +63,22 @@
                     position: uluru,
                     map: map
                 });
+
+                var contentString = '<div id="content">' +
+                        '<div id="siteNotice">' +
+                        '</div>' +
+                        '<div id="bodyContent">' +
+                        '<p><%=descricoes[i]%></p>' +
+                        '</div>' +
+                        '</div>';
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                marker.addListener('click', function () {
+                    infowindow.open(map, marker);
+                });
+
+
                 markers.push(marker);
             <%    }
 

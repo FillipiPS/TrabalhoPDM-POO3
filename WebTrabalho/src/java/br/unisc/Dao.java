@@ -37,6 +37,7 @@ public class Dao {
                 i.setLatitude(rs.getString(2));
                 i.setLongitude(rs.getString(3));
                 i.setPhoto(rs.getBlob(4));
+                i.setDescricao(rs.getString(5));
                 lista.add(i);
             }
             rs.close();
