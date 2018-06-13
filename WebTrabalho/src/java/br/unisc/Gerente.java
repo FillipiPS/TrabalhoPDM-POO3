@@ -40,7 +40,9 @@ public class Gerente extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        String op = request.getParameter("op");
+        op += " Finished";
+        System.out.println(op);
     }
 
     @Override

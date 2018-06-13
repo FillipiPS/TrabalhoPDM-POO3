@@ -49,10 +49,10 @@ public class Dao {
         return lista;
     }
 
-    public boolean insere(String latitude, String longitude, InputStream inputStream) {
+    public boolean insere(String latitude, String longitude, InputStream inputStream, String descricao) {
         boolean inserido = false;
         try {
-            String query = "INSERT INTO info (latitude, longitude, photo) values (?, ?, ?)";
+            String query = "INSERT INTO info (latitude, longitude, photo, descricao) values (?, ?, ?, ?)";
             PreparedStatement statement = con.prepareStatement(query);
             statement.setString(1, latitude);
             statement.setString(2, longitude);
@@ -60,6 +60,7 @@ public class Dao {
                 // fetches input stream of the upload file for the blob column
                 statement.setBlob(3, inputStream);
             }
+            statement.setString(4, descricao);
             //Statement stmt = con.createStatement();
             int row = statement.executeUpdate();
             if (row > 0) {
