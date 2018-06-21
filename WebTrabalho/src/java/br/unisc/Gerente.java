@@ -40,9 +40,15 @@ public class Gerente extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String op = request.getParameter("op");
-        op += " Finished";
-        System.out.println(op);
+        String lat = request.getParameter("lat");
+        String lon = request.getParameter("lon");
+        String img = request.getParameter("img");
+        String desc = request.getParameter("desc");
+        System.out.println(lat);
+        System.out.println(lon);
+        System.out.println(img);
+        System.out.println(desc);
+        //new Dao().insere(lat, lon, inputStream, desc);
     }
 
     @Override
