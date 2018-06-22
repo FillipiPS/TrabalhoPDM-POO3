@@ -74,4 +74,26 @@ public class Dao {
         return inserido;
     }
     
+    
+     public boolean insere(String latitude, String longitude, String descricao) {
+        boolean inserido = false;
+        try {
+            String query = "INSERT INTO info (latitude, longitude, descricao) values (?, ?, ?)";
+            PreparedStatement statement = con.prepareStatement(query);
+            statement.setString(1, latitude);
+            statement.setString(2, longitude);
+            statement.setString(3, descricao);
+            //Statement stmt = con.createStatement();
+            int row = statement.executeUpdate();
+            if (row > 0) {
+                inserido = true;
+            }
+            statement.close();
+            con.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return inserido;
+    }
+    
 }

@@ -44,9 +44,9 @@
                 String[] descricoes = new String[infos.size()];
                 int k = 0;
                 for (Info i : infos) {
-                    Blob image = i.getPhoto();
+                    /* Blob image = i.getPhoto();
                     byte[] imgData = image.getBytes(1, (int) image.length());
-                    encodes[k] = Base64.encodeBase64String(imgData);
+                    encodes[k] = Base64.encodeBase64String(imgData);*/
                     latitude[k] = i.getLatitude();
                     longitude[k] = i.getLongitude();
                     descricoes[k] = i.getDescricao();

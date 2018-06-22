@@ -49,6 +49,11 @@ public class Gerente extends HttpServlet {
         System.out.println(img);
         System.out.println(desc);
         //new Dao().insere(lat, lon, inputStream, desc);
+        if(new Dao().insere(lat, lon, desc)){
+            System.out.println("inserido");
+        }else{
+            System.out.println("não inserido");
+        }
     }
 
     @Override
